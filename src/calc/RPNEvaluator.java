@@ -12,30 +12,31 @@ import calc.tokenizer.token.DoubleType;
 class RPNEvaluator {
 
   Stack<TokenType> stack;
-  ArrayList<TokenType> rpn;
+  Stack<TokenType> rpn;
 
-  public RPNEvaluator(ArrayList<TokenType> rpn) {
+  public RPNEvaluator(Stack<TokenType> rpn) {
     this.rpn = rpn;
     this.stack = new Stack<TokenType>();
   }
 
-  public Number evaluate()
+  public Number evaluate() throws Exception
   {
     Number output = null;
     for(TokenType token: this.rpn) {
       if (token instanceof NumberType) {
         this.stack.push((TokenType) token);
-      }
-      if (token instanceof OperatorType) {
+      }  else if (token instanceof OperatorType) {
         TokenType op1, op2;
         op2 = this.stack.pop();
         op1 = this.stack.pop();
         NumberType newToken = operateOnStack((OperatorType) token, (NumberType) op1, (NumberType) op2);
 
         this.stack.push(newToken);
+      } else {
+        throw new Exception("RPNEvaluator: Unrecognized token type: " + token);
       }
-      // System.out.println(this.stack);
     }
+
     NumberType lastNumber = (NumberType) this.stack.pop();
     output = lastNumber.value();
 

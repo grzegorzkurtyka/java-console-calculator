@@ -21,28 +21,49 @@ public class Tokenizer {
       StringBuilder builder = new StringBuilder();
       OperatorType currentOperator;
 
-      boolean isOperator = false;
+      boolean isOperator = false, isParen = false;
 
       for(int i=0; i < input.length(); i++) {
           char c = input.charAt(i);
-          if (c == ' ')
-              continue;
           isOperator = (c == '+') || (c == '-') || (c == '/') || (c == '*');
-          if (!isOperator) {
-            builder.append(c);
-          } else {
-            // push current string to token
-            token = builderToToken(builder);
-            tokens.add(token);
-            builder = new StringBuilder();
+          isParen = (c == '(') || (c == ')');
 
-            // push currrent operator to token
-            currentOperator = operatorToken(c);
-            tokens.add(currentOperator);
+          if (c == ' ')
+            continue;
+
+          if (!isOperator && !isParen) {
+            builder.append(c);
+            continue;
+          } else {
+             // push current string to token
+             token = builderToToken(builder);
+             if (token != null) {
+               tokens.add(token);
+               builder = new StringBuilder();
+             }
+
+             // push currrent operator to token
+             currentOperator = operatorToken(c);
+             if (currentOperator != null) {
+                tokens.add(currentOperator);
+             }
+           }
+
+          if (c == '(') {
+            tokens.add(new ParenOpenToken());
+            continue;
           }
+          if (c == ')') {
+            tokens.add(new ParenCloseToken());
+            continue;
+          }
+
+
       }
       token = builderToToken(builder);
-      tokens.add(token);
+      if (token != null) {
+        tokens.add(token);
+      }
 
       return tokens;
     }
