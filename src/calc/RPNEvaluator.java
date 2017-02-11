@@ -33,7 +33,7 @@ class RPNEvaluator {
 
         this.stack.push(newToken);
       }
-      System.out.println(this.stack);
+      // System.out.println(this.stack);
     }
     NumberType lastNumber = (NumberType) this.stack.pop();
     output = lastNumber.value();
