@@ -1,6 +1,7 @@
 package calc.tokenizer;
 
 import calc.tokenizer.token.*;
+import calc.tokenizer.token.type.*;
 import java.util.ArrayList;
 import java.lang.StringBuilder;
 

@@ -4,7 +4,7 @@ JC = javac
 .SUFFIXES: .java .class
 
 SRC_PATH:=./src
-SRC = $(wildcard src/calc/**/*.java) $(wildcard src/calc/**/**/*.java) $(wildcard src/calc/*.java)
+SRC = $(wildcard src/calc/**/*.java) $(wildcard src/calc/**/**/*.java) $(wildcard src/calc/**/**/**/*.java) $(wildcard src/calc/*.java)
 CLASS=$(subst src/,classes/, $(SRC:.java=.class))
 
 all: $(CLASS)

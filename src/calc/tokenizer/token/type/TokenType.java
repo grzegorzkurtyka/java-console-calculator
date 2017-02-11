@@ -1,5 +1,7 @@
-package calc.tokenizer.token;
+package calc.tokenizer.token.type;
 
 public interface TokenType {
+
   public String toString();
+
 }

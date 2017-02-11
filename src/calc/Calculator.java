@@ -1,7 +1,7 @@
 package calc;
 import calc.parsers.*;
 import calc.tokenizer.*;
-import calc.tokenizer.token.TokenType;
+import calc.tokenizer.token.type.TokenType;
 import java.util.ArrayList;
 
 class Calculator {

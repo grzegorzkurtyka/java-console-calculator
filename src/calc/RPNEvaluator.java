@@ -2,11 +2,12 @@ package calc;
 
 import java.util.ArrayList;
 import java.util.Stack;
-import calc.tokenizer.token.TokenType;
-import calc.tokenizer.token.NumberType;
+import calc.tokenizer.token.type.TokenType;
+import calc.tokenizer.token.type.OperatorType;
+import calc.tokenizer.token.type.NumberType;
+
 import calc.tokenizer.token.IntegerType;
 import calc.tokenizer.token.DoubleType;
-import calc.tokenizer.token.OperatorType;
 
 class RPNEvaluator {
 

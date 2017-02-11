@@ -1,4 +1,8 @@
-package calc.tokenizer.token;
+package calc.tokenizer.token.type;
+
+import calc.tokenizer.token.type.NumberType;
+import calc.tokenizer.token.IntegerType;
+import calc.tokenizer.token.DoubleType;
 
 public interface OperatorType extends TokenType {
 

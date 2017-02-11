@@ -1,5 +1,10 @@
 package calc.tokenizer.token;
 
+import calc.tokenizer.token.IntegerType;
+import calc.tokenizer.token.DoubleType;
+import calc.tokenizer.token.type.NumberType;
+import calc.tokenizer.token.type.OperatorType;
+
 public class OperatorDIV implements OperatorType {
 
   public int precedence() {

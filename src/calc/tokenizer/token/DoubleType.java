@@ -1,6 +1,7 @@
 package calc.tokenizer.token;
 
 import java.lang.Double;
+import calc.tokenizer.token.type.NumberType;
 
 public class DoubleType implements NumberType {
 

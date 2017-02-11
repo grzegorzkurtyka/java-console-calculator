@@ -1,5 +1,7 @@
 package calc.tokenizer.token;
 
+import calc.tokenizer.token.type.NumberType;
+
 public class IntegerType implements NumberType {
   Integer value;
 
