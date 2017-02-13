@@ -19,6 +19,9 @@ classes/%.class: src/%.java
 .java.class:
 	$(JC) $(JFLAGS) "$<"
 
+jar: $(CLASS)
+		jar cfmv Calculator.jar Manifest.txt -C classes/ .
+
 clean:
 		$(RM) ${CLASS}
 
