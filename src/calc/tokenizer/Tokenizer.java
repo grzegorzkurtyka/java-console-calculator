@@ -15,7 +15,8 @@ public class Tokenizer {
       tokens = new ArrayList<TokenType>();
     }
 
-    public ArrayList<TokenType> get() {
+    public ArrayList<TokenType> get() throws Exception
+    {
       TokenType token;
       String candidate;
       StringBuilder builder = new StringBuilder();
@@ -68,7 +69,7 @@ public class Tokenizer {
       return tokens;
     }
 
-    private TokenType builderToToken(StringBuilder builder)
+    private TokenType builderToToken(StringBuilder builder) throws Exception
     {
       TokenType token = null;
 
@@ -80,7 +81,8 @@ public class Tokenizer {
       return token;
     }
 
-    private NumberType numberToken(String s) {
+    private NumberType numberToken(String s) throws Exception
+    {
       NumberType n = null;
       try {
           Integer i = Integer.valueOf(s);
@@ -92,10 +94,11 @@ public class Tokenizer {
       try {
           Double d = Double.valueOf(s);
           n = new DoubleType(d);
+          return n;
       } catch(NumberFormatException e) {
           // System.out.println("Cannot parse '" + s + "' as Double");
       }
-      return n;
+      throw new Exception("Parsing exception, unrecognized '" + s +  "'");
     }
 
     private OperatorType operatorToken(char c) {
