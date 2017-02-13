@@ -26,12 +26,16 @@ class RPNEvaluator {
       if (token instanceof NumberType) {
         this.stack.push((TokenType) token);
       }  else if (token instanceof OperatorType) {
-        TokenType op1, op2;
-        op2 = this.stack.pop();
-        op1 = this.stack.pop();
-        NumberType newToken = operateOnStack((OperatorType) token, (NumberType) op1, (NumberType) op2);
+        try {
+          TokenType op1, op2;
+          op2 = this.stack.pop();
+          op1 = this.stack.pop();
+          NumberType newToken = operateOnStack((OperatorType) token, (NumberType) op1, (NumberType) op2);
 
-        this.stack.push(newToken);
+          this.stack.push(newToken);
+        } catch (java.util.EmptyStackException es) {
+          throw new Exception("RPNEvaluator: Unbalanced stack cannot be evaluated");
+        }
       } else {
         throw new Exception("RPNEvaluator: Unrecognized token type: " + token);
       }
