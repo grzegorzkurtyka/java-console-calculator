@@ -26,7 +26,7 @@ public class Tokenizer {
 
       for(int i=0; i < input.length(); i++) {
           char c = input.charAt(i);
-          isOperator = (c == '+') || (c == '-') || (c == '/') || (c == '*');
+          isOperator = (c == '+') || (c == '-') || (c == '/') || (c == '*') || (c == '^');
           isParen = (c == '(') || (c == ')');
 
           if (c == ' ')
@@ -108,6 +108,7 @@ public class Tokenizer {
         case '-': t = new OperatorSUB(); break;
         case '*': t = new OperatorMUL(); break;
         case '/': t = new OperatorDIV(); break;
+        case '^': t = new OperatorPOW(); break;
       }
       return t;
     }
