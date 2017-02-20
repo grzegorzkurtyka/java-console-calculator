@@ -16,15 +16,15 @@ public class OperatorMUL implements OperatorType {
     }
 
     public NumberType operate(IntegerType op1, IntegerType op2) {
-        return new IntegerType(op1.value.intValue() * op2.value.intValue());
+        return new IntegerType(op1.value * op2.value);
     }
 
     public DoubleType operate(DoubleType op1, DoubleType op2) {
-        return new DoubleType(op1.value.doubleValue() * op2.value.doubleValue());
+        return new DoubleType(op1.value * op2.value);
     }
 
     public DoubleType operate(IntegerType op1, DoubleType op2) {
-        return new DoubleType(op1.value.intValue() * op2.value.doubleValue());
+        return new DoubleType(op1.value * op2.value);
     }
 
     public DoubleType operate(DoubleType op1, IntegerType op2) {
