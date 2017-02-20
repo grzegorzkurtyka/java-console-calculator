@@ -7,31 +7,31 @@ import calc.tokenizer.token.type.OperatorType;
 
 public class OperatorPOW implements OperatorType {
 
-  public int precedence() {
-    return 4;
-  }
+    public int precedence() {
+        return 4;
+    }
 
-  public Associativity associativity() {
-      return Associativity.RIGHT;
-  }
+    public Associativity associativity() {
+        return Associativity.RIGHT;
+    }
 
-  public NumberType operate(IntegerType op1, IntegerType op2) {
-    return new DoubleType(Math.pow(op1.value.doubleValue(), op2.value.doubleValue()));
-  }
+    public NumberType operate(IntegerType op1, IntegerType op2) {
+        return new DoubleType(Math.pow(op1.value.doubleValue(), op2.value.doubleValue()));
+    }
 
-  public DoubleType operate(DoubleType op1, DoubleType op2) {
-    return new DoubleType(Math.pow(op1.value.doubleValue(), op2.value.doubleValue()));
-  }
+    public DoubleType operate(DoubleType op1, DoubleType op2) {
+        return new DoubleType(Math.pow(op1.value.doubleValue(), op2.value.doubleValue()));
+    }
 
-  public DoubleType operate(IntegerType op1, DoubleType op2) {
-    return new DoubleType(Math.pow(op1.value.intValue(), op2.value.doubleValue()));
-  }
+    public DoubleType operate(IntegerType op1, DoubleType op2) {
+        return new DoubleType(Math.pow(op1.value.intValue(), op2.value.doubleValue()));
+    }
 
-  public DoubleType operate(DoubleType op1, IntegerType op2) {
-    return new DoubleType(Math.pow(op1.value.doubleValue(), op2.value.doubleValue()));
-  }
+    public DoubleType operate(DoubleType op1, IntegerType op2) {
+        return new DoubleType(Math.pow(op1.value.doubleValue(), op2.value.doubleValue()));
+    }
 
-  public String toString() {
-    return "'^'";
-  }
+    public String toString() {
+        return "'^'";
+    }
 }

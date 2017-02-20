@@ -4,8 +4,8 @@ import calc.tokenizer.token.type.ParenType;
 
 public class ParenOpenToken implements ParenType {
 
-  public String toString() {
-    return "(";
-  }
+    public String toString() {
+        return "(";
+    }
 
 }

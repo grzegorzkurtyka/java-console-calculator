@@ -4,14 +4,14 @@ import calc.tokenizer.token.type.TokenType;
 
 public class StringToken implements TokenType {
 
-  String value;
+    String value;
 
-  public StringToken(String i) {
-    this.value = i;
-  }
+    public StringToken(String i) {
+        this.value = i;
+    }
 
-  public String toString() {
-    return "'" + value + "'";
-  }
+    public String toString() {
+        return "'" + value + "'";
+    }
 
 }

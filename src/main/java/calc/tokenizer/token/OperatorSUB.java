@@ -7,31 +7,31 @@ import calc.tokenizer.token.type.OperatorType;
 
 public class OperatorSUB implements OperatorType {
 
-  public int precedence() {
-    return 2;
-  }
+    public int precedence() {
+        return 2;
+    }
 
-  public Associativity associativity() {
-      return Associativity.LEFT;
-  }
+    public Associativity associativity() {
+        return Associativity.LEFT;
+    }
 
-  public NumberType operate(IntegerType op1, IntegerType op2) {
-    return new IntegerType(op1.value.intValue() - op2.value.intValue());
-  }
+    public NumberType operate(IntegerType op1, IntegerType op2) {
+        return new IntegerType(op1.value.intValue() - op2.value.intValue());
+    }
 
-  public NumberType operate(DoubleType op1, IntegerType op2) {
-      return new DoubleType(op1.value.doubleValue() - op2.value.intValue());
-  }
+    public NumberType operate(DoubleType op1, IntegerType op2) {
+        return new DoubleType(op1.value.doubleValue() - op2.value.intValue());
+    }
 
-  public NumberType operate(IntegerType op1, DoubleType op2) {
-      return new DoubleType(op1.value.intValue() - op2.value.doubleValue());
-  }
+    public NumberType operate(IntegerType op1, DoubleType op2) {
+        return new DoubleType(op1.value.intValue() - op2.value.doubleValue());
+    }
 
-  public NumberType operate(DoubleType op1, DoubleType op2) {
-      return new DoubleType(op1.value.doubleValue() - op2.value.doubleValue());
-  }
+    public NumberType operate(DoubleType op1, DoubleType op2) {
+        return new DoubleType(op1.value.doubleValue() - op2.value.doubleValue());
+    }
 
-  public String toString() {
-    return "'-'";
-  }
+    public String toString() {
+        return "'-'";
+    }
 }

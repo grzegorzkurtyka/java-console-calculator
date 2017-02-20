@@ -13,8 +13,11 @@ public interface OperatorType extends TokenType {
     public Associativity associativity();
 
     public NumberType operate(IntegerType op1, IntegerType op2);
+
     public NumberType operate(DoubleType op1, IntegerType op2);
+
     public NumberType operate(IntegerType op1, DoubleType op2);
+
     public NumberType operate(DoubleType op1, DoubleType op2);
 
 }
