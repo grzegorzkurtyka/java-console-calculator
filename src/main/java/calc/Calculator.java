@@ -9,7 +9,7 @@ import java.util.Stack;
 
 class Calculator {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         String input;
         ParserInterface parser;
         if (args.length > 0) {
@@ -20,6 +20,11 @@ class Calculator {
 
         input = parser.getInput();
         System.out.println("input = " + input);
+
+        if (input.isEmpty()) {
+            System.out.println("Input missing");
+            return;
+        }
 
         try {
             Tokenizer tokenizer = new Tokenizer(input);
@@ -37,6 +42,7 @@ class Calculator {
             System.out.println("result = " + result);
         } catch (Exception e) {
             System.out.println(e);
+            throw e;
         }
     }
 }
