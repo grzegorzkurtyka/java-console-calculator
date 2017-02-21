@@ -1,11 +1,11 @@
 package calc.tokenizer.token;
 
-import calc.tokenizer.token.IntegerType;
-import calc.tokenizer.token.DoubleType;
 import calc.tokenizer.token.type.NumberType;
 import calc.tokenizer.token.type.OperatorType;
 
-public class OperatorMUL implements OperatorType {
+public class OperatorMUL extends BaseToken implements OperatorType {
+
+    protected String value = "*";
 
     public int precedence() {
         return 3;
@@ -31,7 +31,4 @@ public class OperatorMUL implements OperatorType {
         return operate(op2, op1);
     }
 
-    public String toString() {
-        return "'*'";
-    }
 }

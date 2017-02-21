@@ -2,7 +2,7 @@ package calc.tokenizer.token;
 
 import calc.tokenizer.token.type.NumberType;
 
-public class IntegerType implements NumberType {
+public class IntegerType extends BaseToken implements NumberType {
     Integer value;
 
     public IntegerType(Integer i) {
@@ -16,4 +16,5 @@ public class IntegerType implements NumberType {
     public String toString() {
         return this.value.toString();
     }
+
 }

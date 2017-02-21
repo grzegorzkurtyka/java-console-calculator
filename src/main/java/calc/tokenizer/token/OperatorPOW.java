@@ -3,7 +3,9 @@ package calc.tokenizer.token;
 import calc.tokenizer.token.type.NumberType;
 import calc.tokenizer.token.type.OperatorType;
 
-public class OperatorPOW implements OperatorType {
+public class OperatorPOW extends BaseToken implements OperatorType {
+
+    protected String value = "^";
 
     public int precedence() {
         return 4;
@@ -29,7 +31,4 @@ public class OperatorPOW implements OperatorType {
         return new DoubleType(Math.pow(op1.value, op2.value.doubleValue()));
     }
 
-    public String toString() {
-        return "'^'";
-    }
 }

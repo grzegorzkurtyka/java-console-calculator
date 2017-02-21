@@ -1,10 +1,11 @@
 package calc.tokenizer.token;
 
 import java.lang.Double;
+import java.util.Objects;
 
 import calc.tokenizer.token.type.NumberType;
 
-public class DoubleType implements NumberType {
+public class DoubleType extends BaseToken implements NumberType {
 
     Double value;
 
@@ -19,4 +20,5 @@ public class DoubleType implements NumberType {
     public String toString() {
         return this.value.toString();
     }
+
 }

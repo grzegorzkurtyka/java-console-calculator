@@ -1,11 +1,11 @@
 package calc.tokenizer.token;
 
-import calc.tokenizer.token.IntegerType;
-import calc.tokenizer.token.DoubleType;
 import calc.tokenizer.token.type.NumberType;
 import calc.tokenizer.token.type.OperatorType;
 
-public class OperatorADD implements OperatorType {
+public class OperatorADD extends BaseToken implements OperatorType {
+
+    protected String value = "+";
 
     public int precedence() {
         return 2;
@@ -31,7 +31,4 @@ public class OperatorADD implements OperatorType {
         return new DoubleType(op1.value + op2.value);
     }
 
-    public String toString() {
-        return "'+'";
-    }
 }
