@@ -5,9 +5,7 @@ import java.util.Objects;
 
 import calc.tokenizer.token.type.NumberType;
 
-public class DoubleType extends BaseToken implements NumberType {
-
-    Double value;
+public class DoubleType extends NumericToken implements NumberType {
 
     public DoubleType(Double d) {
         this.value = d;

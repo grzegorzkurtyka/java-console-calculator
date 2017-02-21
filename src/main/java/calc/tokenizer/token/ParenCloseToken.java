@@ -4,6 +4,7 @@ import calc.tokenizer.token.type.ParenType;
 
 public class ParenCloseToken extends BaseToken implements ParenType {
 
-    protected String value = ")";
-
+    public ParenCloseToken() {
+        this.value = ")";
+    }
 }

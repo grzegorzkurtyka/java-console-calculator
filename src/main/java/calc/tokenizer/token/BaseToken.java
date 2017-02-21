@@ -16,6 +16,6 @@ public class BaseToken {
 
     @Override
     public String toString() {
-        return "'" + value + "'";
+        return "'" + this.value + "'";
     }
 }

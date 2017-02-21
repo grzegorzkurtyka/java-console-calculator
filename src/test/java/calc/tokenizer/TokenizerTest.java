@@ -18,7 +18,7 @@ class TokenizerTest {
         try {
             assertArrayEquals(t1.get().toArray(), t2.get().toArray());
         } catch (Exception e) {
-            fail("Exception thrown from Tokenizer");
+            fail("Exception thrown from Tokenizer: " + e.getMessage());
         }
 
         t1 = new Tokenizer("(1+1*2/3^4)");
@@ -26,7 +26,7 @@ class TokenizerTest {
         try {
             assertArrayEquals(t1.get().toArray(), t2.get().toArray());
         } catch (Exception e) {
-            fail("Exception thrown from Tokenizer");
+            fail("Exception thrown from Tokenizer: " + e.getMessage());
         }
     }
 
@@ -40,7 +40,7 @@ class TokenizerTest {
         try {
             assertArrayEquals(expected.toArray(), t.get().toArray());
         } catch (Exception e) {
-            fail("Exception thrown from Tokenizer");
+            fail("Exception thrown from Tokenizer: " + e.getMessage());
         }
     }
 
@@ -56,7 +56,7 @@ class TokenizerTest {
         try {
             assertArrayEquals(expected.toArray(), t.get().toArray());
         } catch (Exception e) {
-            fail("Exception thrown from Tokenizer");
+            fail("Exception thrown from Tokenizer: " + e.getMessage());
         }
     }
 
@@ -71,7 +71,7 @@ class TokenizerTest {
         } catch (IndexOutOfBoundsException e) {
             fail("Wrong number of tokens");
         } catch (Exception e) {
-            fail("Exception thrown from Tokenizer");
+            fail("Exception thrown from Tokenizer: " + e.getMessage());
         }
 
     }
